@@ -1,0 +1,27 @@
+---
+// BlogPostingJSONLD.astro
+
+import type { CollectionEntry } from "astro:content";
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDatetime, tags } = post.data;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  keywords: tags,
+  author: {
+    "@type": "Person",
+    name: "WeiJie",
+    url: "https://weij0.com",
+  },
+  datePublished: pubDatetime.toISOString().substring(0, 10),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
