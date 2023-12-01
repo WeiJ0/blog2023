@@ -29,24 +29,16 @@ export default function Datetime({ datetime, size = "sm", className }: Props) {
 
 const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
   const myDatetime = new Date(datetime);
-
-  const date = myDatetime.toLocaleDateString(LOCALE, {
+  const taiwanDatetime = myDatetime.toLocaleString("zh-TW", {
+    timeZone: "UTC",    
     year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
-  const time = myDatetime.toLocaleTimeString(LOCALE, {
+    month: "2-digit",
+    day: "2-digit",
+    hour12: false,  
     hour: "2-digit",
     minute: "2-digit",
+    second: "2-digit",
   });
 
-  return (
-    <>
-      {date}
-      <span aria-hidden="true"> | </span>
-      <span className="sr-only">&nbsp;at&nbsp;</span>
-      {time}
-    </>
-  );
+  return <>{taiwanDatetime}</>;
 };
