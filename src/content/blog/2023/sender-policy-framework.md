@@ -32,3 +32,20 @@ description: 最近在工作上遇到網站上沒辦法寄出信件，後來輾�
 - `~all` 是設定規則，`~all` 代表如果不符合規則，就會標記為垃圾郵件，但不會直接拒絕  
 如果要直接拒絕，則使用 `-all`，如果要全部通過，則使用 `+all`
 
+## 確認 SPF 是否通過
+
+舉例而言，於 Gmail 中，信件的更多功能會有`查看原始信件`的功能，打開後會開啟一個新分頁，可以看到 SPF 的狀態
+
+![查看原始信件按鈕](/assets/blog/sender-policy-framework/spf1.png)
+
+![原始信件內容](/assets/blog/sender-policy-framework/spf2.png)
+
+## 常見的 SPF 狀態
+
+- Pass 通過 (會接收)
+- Neutral 中立 (會接收)
+- Softfail 軟失敗 (會接收但特別標註)
+- Fail 失敗 (會拒絕)
+- Temperror 暫時錯誤 (由收信伺服器決定)
+- Permerror 永久錯誤 (由收信伺服器決定)
+
