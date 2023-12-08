@@ -90,8 +90,12 @@ const socialImageURL = new URL(
       gtag("config", "G-F4EC5W6RLE");
     </script>
 
+    <!-- facebook comments -->
+    <script async defer src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v18.0&appId=232886862560461"></script>
+
   </head>
   <body>
+    <div id="fb-root"></div>
     <slot />
   </body>
 </html>
