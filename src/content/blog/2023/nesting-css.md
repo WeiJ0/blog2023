@@ -6,7 +6,7 @@ featured: false
 draft: false
 tags:
   - CSS
-description: 優化網頁互動效果！探討在使用 lenis 滾動 library 時可能遭遇的問題，特別是在處理彈跳視窗內容需要滾動的情況下。文章介紹了使用 MutationObserver API 的方法，這能夠監聽 DOM 的變化，進而達成開啟彈跳視窗時動態處理 lenis 的效果。
+description: 近期又看到了 Safari 的 Preview 支援了 Nesting CSS 的功能，所以再次比較一下 Nesting CSS 和 SCSS 的差異。但因為瀏覽器的支援截至 2023 年底還不夠完整，所以在短期之內，還是沒辦法完全取代 SCSS 的地位。
 ---
 
 ## 前言
