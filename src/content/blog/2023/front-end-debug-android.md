@@ -57,10 +57,10 @@ USB 偵錯功能主要讓電腦能透過 USB 來讀取手機上的資料，也�
 
 進入到檢查頁面時，若手機有正常連線就會跳出 `允許授權` 的視窗，點選 `允許` 後重新整理檢查頁面，就會看到手機的資訊，包含有哪些 APP 可以做偵錯
 
-![](/assets/blog/front-end-debug/debugger-android.jpg)
+![](/assets/blog/front-end-debug/debugger-android.webp)
 
 像畫面中就有 brave 和 chrome，這邊就使用 chrome 來做偵錯，點選分頁的 `inspect` 就會跳出開發者工具進行 debug，功能和在電腦上一模一樣。
 
 而透過電腦開發者工具`元素 (element)`，的功能，可以直接在手機上看到結果以及實際的 css 樣式。也可以透過開發者工具修改在手機上預覽，在切版除錯上是一個非常好用的功能。
 
-![](/assets/blog/front-end-debug/debugger-android-2.jpg)
+![](/assets/blog/front-end-debug/debugger-android-2.webp)
