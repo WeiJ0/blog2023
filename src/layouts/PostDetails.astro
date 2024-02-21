@@ -15,7 +15,7 @@ export interface Props {
 
 const { post } = Astro.props;
 
-const { title, author, description, ogImage, canonicalURL, pubDatetime, tags } =
+const { title, author, description, ogImage, canonicalURL, pubDatetime, tags, postSlug } =
   post.data;
 
 const { Content } = await post.render();
@@ -25,6 +25,8 @@ const ogUrl = new URL(
   ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
   Astro.url.origin
 ).href;
+
+const currentUrl = `${ogUrl}posts/${postSlug}`;
 ---
 
 <Layout
@@ -59,7 +61,7 @@ const ogUrl = new URL(
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
 
-    <FacebookComment URL={canonicalURL} />
+    <FacebookComment URL={currentUrl} />
   </main>
   <Footer />
 </Layout>
