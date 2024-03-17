@@ -7,7 +7,7 @@ import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import BlogPostingJSONLD from "@components/BlogPostingJSONLD.astro";
-import FacebookComment from "@components/FacebookComment.astro";
+import DisqusComment from "@components/DisqusComment.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -61,7 +61,7 @@ const currentUrl = `${ogUrl}posts/${postSlug}`;
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
 
-    <FacebookComment URL={currentUrl} />
+    <DisqusComment URL={currentUrl} slug={postSlug} />
   </main>
   <Footer />
 </Layout>
